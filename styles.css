@@ -27,28 +27,30 @@ body {
     align-items: center;
     text-align: left;
     padding: 2rem;
+    flex-direction: row;  /* Ensure it's aligned horizontally */
 }
-/* Hero Image Styling */
+
 .hero-image {
     width: 250px;
     height: 250px;
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid #fff;
-    margin-bottom: 2rem;
+    margin-right: 2rem; /* Adjust spacing between image and text */
+    max-width: 100%;  /* Ensure the image is responsive */
 }
-.hero-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
+
+
 .hero-text span {
     color: #1abc9c;
 }
-/* Hero Section Styling */
 .hero-text {
     text-align: center;
     color: #fff;
     margin-top: 1rem;
+    max-width: 500px;
+    display: inline-block;  /* Ensures it doesn't expand and collapse */
+    width: 100%;  /* Prevent it from shifting horizontally */
 }
 .social-icons {
     display: flex;
@@ -67,9 +69,13 @@ body {
     color: #1abc9c; /* Change to a color of your choice on hover */
 }
 .hero h1 {
-    font-size: 2.5rem;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;  /* Set the width to 100% to prevent shifting */
+    animation: typing 3s steps(40) 1s forwards;
+  
 }
-
 .hero span {
     color: #000000;
 }
@@ -153,10 +159,6 @@ h2{
     margin-bottom: 40px;
 
 }
-
-
-
-
 
 .project-cards-container {
     display: grid;
@@ -311,20 +313,29 @@ footer {
         width: 100%;
     }
 }
-
-.hero-text h1 {
+.hero h1 {
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
-    width: 0;
-    animation: typing 5s steps(40) 1s forwards;
+    width: 0;  /* Initially set width to 0 to hide the text */
+    visibility: hidden; /* Hide the text initially */
+    font-size: 45px;  /* Responsive font size */
+    animation: typing 3s steps(40) 1s forwards, showText 0s 1s forwards; /* Animation to reveal the text */
 }
 
+@keyframes typing {
+    0% {
+        width: 0;
+        visibility: visible; /* Make text visible when the animation starts */
+    }
+    100% {
+        width: 100%;
+    }
+}
 
-/* Blinking cursor effect */
-@keyframes blink {
-    50% {
-        border-color: transparent;
+@keyframes showText {
+    100% {
+        visibility: visible; /* Ensure the text stays visible after typing ends */
     }
 }
 
