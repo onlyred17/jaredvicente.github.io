@@ -1,0 +1,635 @@
+  /* General Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #ecf0f1;
+}
+
+
+
+
+/* Hero Section */
+.hero {
+    background: transparent;
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    padding-top: 0px;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 2rem;
+}
+/* Hero Image Styling */
+.hero-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    margin-bottom: 2rem;
+}
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.hero-text span {
+    color: #1abc9c;
+}
+/* Hero Section Styling */
+.hero-text {
+    text-align: center;
+    color: #fff;
+    margin-top: 1rem;
+}
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    font-size: 2rem;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #1abc9c; /* Change to a color of your choice on hover */
+}
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero span {
+    color: #000000;
+}
+.btn-primary {
+    background-color: #1abc9c;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+/* About Section */
+.about {
+    padding: 3rem 2rem;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Title Styling */
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* About Content Layout */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    justify-items: center;
+    align-items: center;
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+/* Text Styling */
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.8);
+}
+.icon-container {
+    margin-top: 20px;
+    display: flex;               /* Use flexbox for horizontal alignment */
+    justify-content: center;     /* Center the icons horizontally */
+    gap: 50px;                   /* Space between icons */
+}
+
+.icon-item {
+    text-align: center;          /* Center the text below each icon */
+}
+
+.icon-container i {
+    font-size: 50px;             /* Adjust the icon size */
+    color: rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.icon-container i:hover {
+    transform: scale(1.2);       /* Enlarges the icon on hover */
+}
+
+.icon-item p {
+    font-size: 18px;             /* Font size for the text */
+    margin-top: 10px;            /* Space between icon and text */
+    color: #333;                 /* Text color */
+}
+
+h2{
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+
+}
+
+
+
+
+
+.project-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.project-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+    max-width: 350px;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.project-video {
+    position: relative;
+    padding-top: 56.25%; /* Aspect ratio 16:9 */
+    background-color: #000;
+}
+
+.project-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.project-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.project-info p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+
+
+.btn-project:hover {
+    background-color: #16a085;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    .project-cards-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Skills Section */
+.skills {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.skills ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.skills ul li {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+
+}
+
+.tech-icons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.tech-icons img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Contact Section */
+.contact {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.contact a {
+    color: #1abc9c;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #2c3e50;
+    color: #fff;
+}
+
+/* Background Animation */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(-45deg, #1abc9c, #2c3e50, #16a085, #2980b9);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+/* Typing animation */
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.hero-text h1 {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 5s steps(40) 1s forwards;
+}
+
+
+/* Blinking cursor effect */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Smooth Transition for Section Visibility */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 4rem 2rem;
+    flex-direction: column;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden;
+    transform: translateY(20px); /* Start position for slide-in effect */
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s;
+}
+/* Fade-in and slide-up effect when section is activated */
+section.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Slide to original position */
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+
+/* Hidden class initially hides the sections */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0s 0.5s, transform 0.5s ease;
+}
+
+/* Fade-in class makes sections visible with animation */
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    transition: opacity 1s ease, visibility 0s 0s, transform 1s ease;
+}
+
+/* Optional: Force sections to show on page load */
+#about, .projects, .skills, .contact {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+/* Optional: Smooth scroll on page load */
+html {
+    scroll-behavior: smooth;
+}
+/* Header Section Animation */
+header {
+    animation: slideDown 1s ease-out;
+}
+
+/* Header link hover animations */
+header ul li a:hover {
+    color: #1abc9c;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+/* Animation for sliding in the header */
+@keyframes slideDown {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Hero Section Animation */
+.hero {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation for the background color shift */
+@keyframes backgroundShift {
+    0% {
+        background-color: #16a085;
+    }
+    50% {
+        background-color: #2980b9;
+    }
+    100% {
+        background-color: #16a085;
+    }
+}
+
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(-45deg, #1abc9c, #2c3e50, #16a085, #2980b9);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite, backgroundShift 8s ease infinite;
+}
+
+/* Projects section animation */
+.project-card {
+    animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Contact section fade-in */
+.contact {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Apply fade-in animation to each section on scroll */
+.fade-in {
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+/* Button Styling */
+.btn-primary {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    background: #2c3e50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Button Hover Effect */
+.btn-primary:hover {
+    background-color: #1abc9c; /* Change color to green */
+    transform: translateY(-5px) scale(1.1); /* Slightly move up and scale the button */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Add a soft shadow for depth */
+    cursor: pointer; /* Change cursor to indicate interactiveness */
+}
+/* Add these styles to your existing styles.css */
+.project-cards-container {
+    position: relative; /* For positioning buttons beside the cards */
+}
+
+.project-navigation {
+    position: absolute;
+    top: 50%;
+    left: 700px; /* Adjust this value to move left arrow closer */
+    right: 700px; /* Adjust this value to move right arrow closer */
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.project-navigation button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #fff; /* Adjust the color as needed */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.project-navigation button:hover {
+    color: #ff6347; /* Change color on hover */
+}
+
+.project-navigation button i {
+    display: inline-block;
+}
+/* Add styles for the category section */
+.categories {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.category-label {
+    font-size: 18px;
+    color: #007bff; /* Color of the label */
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 3px; /* Add space for the bottom border */
+    border-bottom: 2px solid transparent; /* Transparent by default */
+}
+
+.category-label.active {
+    color: #0056b3; /* Active label color */
+    border-bottom: 2px solid #007bff; /* Highlight active category with a blue bottom border */
+}
+
+.category-label:hover:not(:disabled) {
+    color: #0056b3; /* Hover color for active category */
+    border-bottom: 2px solid #0056b3; /* Hover underline */
+}
+
+.category-label:disabled {
+    color: #ddd;
+    cursor: not-allowed;
+}
+
+
+/* Header Styling */
+header {
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center;
+    padding: 1rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo Container (Left) */
+.logo-container {
+    flex: 1; /* Logo takes up available space */
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* Navigation Menu (Right) */
+nav {
+    flex: 2; /* Ensures nav takes more space and is pushed towards right */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end; /* Align links to the right */
+    gap: 2.5rem;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+/* Hover Effect */
+.nav-links li a:hover {
+    color: #1abc9c;
+}
+
+/* Optional: Responsive Navigation for Smaller Screens */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo-container {
+        margin-bottom: 1rem; /* Space between logo and nav */
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: space-around;
+    }
+}
