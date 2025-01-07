@@ -339,7 +339,6 @@ footer {
     }
 }
 
-/* Smooth Transition for Section Visibility */
 section {
     display: flex;
     justify-content: center;
@@ -351,16 +350,16 @@ section {
     opacity: 0; /* Initially hidden */
     visibility: hidden;
     transform: translateY(20px); /* Start position for slide-in effect */
-    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Faster transition */
 }
+
 /* Fade-in and slide-up effect when section is activated */
 section.visible {
     opacity: 1;
     visibility: visible;
     transform: translateY(0); /* Slide to original position */
-    transition: opacity 1s ease, transform 1s ease;
+    transition: opacity 1s ease, transform 1s ease; /* Apply animation without delay */
 }
-
 
 /* Hidden class initially hides the sections */
 .hidden {
@@ -471,7 +470,7 @@ header ul li a:hover {
 }
 
 /* Contact section fade-in */
-.contact {
+contact {
     animation: fadeInUp 1s ease-in-out;
 }
 
