@@ -662,7 +662,11 @@ nav {
     h2 {
         font-size: 2rem;
     }
-
+    .about-image img {
+        width: 150px; /* Adjust the size of the image */
+        height: auto; /* Keep aspect ratio */
+        border-radius: 50%; /* Optional: to make the image round */
+    }
     /* Header Styling */
     .nav-links {
         flex-direction: column;
