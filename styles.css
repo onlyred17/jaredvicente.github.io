@@ -26,7 +26,8 @@ body {
     justify-content: center;
     align-items: center;
     text-align: left;
-    padding: 1rem;
+    padding: .7rem;
+    padding-right: 2px;
     flex-direction: row;  /* Ensure it's aligned horizontally */
 }
 
