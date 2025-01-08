@@ -144,30 +144,72 @@
 </section>
 
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills hidden">
-        <h2>Technical Skills</h2>
-        <ul>
-            <li>Problem Solving</li>
-            <li>Leadership</li>
-            <li>Critical Thinking</li>
-        </ul>
-        <h3>Tech Stack</h3>
-        <div class="tech-icons">
-            <img src="./assets/mysql-logo.png" alt="MySQL">
-            <img src="./assets/php-logo.png" alt="PHP">
-            <img src="./assets/html-logo.png" alt="HTML">
-            <img src="./assets/css-logo.png" alt="CSS">
-            <img src="./assets/javascript-logo.png" alt="JavaScript">
+  <!-- Skills Section -->
+<section id="skills" class="skills hidden">
+    <h2>Technical Skills</h2>
+    <p>As a backend developer, I focus on solving problems, leading teams, and continuously learning. Below are some of my key skills:</p>
+    <div class="skills-list">
+        <div class="skill-item">
+            <i class="fas fa-brain"></i> <!-- Icon for problem-solving -->
+            <p>Problem Solving</p>
         </div>
-    </section>
+        <div class="skill-item">
+            <i class="fas fa-users-cog"></i> <!-- Icon for leadership -->
+            <p>Leadership</p>
+        </div>
+        <div class="skill-item">
+            <i class="fas fa-lightbulb"></i> <!-- Icon for critical thinking -->
+            <p>Critical Thinking</p>
+        </div>
+        <div class="skill-item">
+            <i class="fas fa-clock"></i> <!-- Icon for time management -->
+            <p>Time Management</p>
+        </div>
+        <div class="skill-item">
+            <i class="fas fa-users"></i> <!-- Icon for teamwork -->
+            <p>Team Collaboration</p>
+        </div>
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact hidden">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:jaredsonvicente1771@gmail.com">jaredsonvicente1771@gmail.com</a></p>
-        <p>Connect on <a href="https://www.linkedin.com/in/vicente-jared-son-g-2a3b4b2aa/" target="_blank">LinkedIn</a> | <a href="https://github.com/onlyred17" target="_blank">GitHub</a></p>
-    </section>
+    <h3>Tech Stack</h3>
+    <div class="tech-icons">
+        <img src="./assets/mysql-logo.png" alt="MySQL" title="MySQL">
+        <img src="./assets/php-logo.png" alt="PHP" title="PHP">
+        <img src="./assets/html-logo.png" alt="HTML" title="HTML">
+        <img src="./assets/css-logo.png" alt="CSS" title="CSS">
+        <img src="./assets/javascript-logo.png" alt="JavaScript" title="JavaScript">
+    </div>
+
+  
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact hidden">
+    <h2>Contact Me</h2>
+    <p>If you’d like to reach out, feel free to email me or use the contact form below:</p>
+    <p>Email: <a href="mailto:jaredsonvicente1771@gmail.com">jaredsonvicente1771@gmail.com</a></p>
+    <p>Connect on 
+        <a href="https://www.linkedin.com/in/vicente-jared-son-g-2a3b4b2aa/" target="_blank">LinkedIn</a> | 
+        <a href="https://github.com/onlyred17" target="_blank">GitHub</a>
+    </p>
+
+    <h3>Send me a Message</h3>
+    <form action="mailto:jaredsonvicente1771@gmail.com" method="POST" enctype="text/plain">
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+</section>
 
     <!-- Footer Section -->
     <footer>
