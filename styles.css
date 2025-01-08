@@ -403,12 +403,50 @@ form {
     cursor: pointer; /* Change cursor to indicate interactiveness */
 }
 
-
+/* Footer Styling */
 footer {
     text-align: center;
-    padding: 1rem;
-    background: #2c3e50;
+    padding: 2rem;
     color: #fff;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+/* Footer Text Styling */
+footer p {
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Footer Social Media Icons Section */
+footer .social-icons {
+    margin-top: 1.5rem;
+}
+
+footer .social-icons a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #1abc9c; /* Change color to the brand color on hover */
+    transform: scale(1.2); /* Slightly enlarge icons for interaction */
+}
+
+/* Footer Link Styling (optional, if you add links in the future) */
+footer a {
+    color: #1abc9c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #16a085; /* Change to a darker shade on hover */
 }
 
 /* Background Animation */
