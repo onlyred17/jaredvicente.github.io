@@ -811,7 +811,7 @@ nav {
     /* Header Styling */
     .nav-links {
         flex-direction: row;
-        gap: 1rem;
+        gap: 10px;
 
     }
 
