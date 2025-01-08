@@ -26,7 +26,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: left;
-    padding: 2rem;
+    padding: 1rem;
     flex-direction: row;  /* Ensure it's aligned horizontally */
 }
 
@@ -849,8 +849,7 @@ nav {
     /* Header Styling */
     .nav-links {
         flex-direction: row;
-        gap: 10px;
-
+        gap: 7px;
     }
 
     .nav-links li a {
