@@ -624,19 +624,52 @@ nav {
     color: #1abc9c;
 }
 
-/* Optional: Responsive Navigation for Smaller Screens */
+
+
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
+    /* Hero Section */
+    .hero-content {
+        flex-direction: column; /* Stack the image and text on smaller screens */
+        text-align: center;
     }
 
-    .logo-container {
-        margin-bottom: 1rem; /* Space between logo and nav */
+    .hero-image {
+        margin-right: 0;
+        margin-bottom: 1rem;
     }
 
+    /* About Section */
+    .about-content {
+        grid-template-columns: 1fr; /* Stack the about content on smaller screens */
+    }
+
+    /* Project Cards */
+    .project-cards-container {
+        grid-template-columns: 1fr; /* Stack the project cards on smaller screens */
+    }
+
+    /* Project Navigation */
+    .project-navigation {
+        position: static;
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 70px;
+    }
+
+    /* Title Adjustments */
+    h2 {
+        font-size: 2rem;
+    }
+
+    /* Header Styling */
     .nav-links {
-        width: 100%;
-        justify-content: space-around;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .nav-links li a {
+        font-size: 1.2rem;
     }
 }
