@@ -94,49 +94,52 @@
 
     <!-- Category Section -->
     <div class="categories">
-        <span class="arrow-icon left-arrow" id="left-arrow">
-            <i class="fas fa-chevron-left"></i> <!-- Left arrow icon -->
-        </span>
-        <span class="category-label active" id="web-category">Web</span>
-        
-        <span class="arrow-icon right-arrow" id="right-arrow">
-            <i class="fas fa-chevron-right"></i> <!-- Right arrow icon -->
-        </span>
-    
-    </div>
-
-    <!-- Project Cards Container -->
-    <div class="project-cards-container">
-        <!-- Web Project Card 1 -->
-        <div class="project-card web-project">
-            <div class="project-video">
-                <video controls>
-                    <source src="./assets/project_demo1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="project-info">
-                <h3>Management System using PHP, MySQL, HTML, CSS, JavaScript</h3>
-                <p>This project includes user authentication with login and signup, CRUD operations, and report generation functionalities.</p>
-                <a href="https://github.com/onlyred17/Management-System" target="_blank" class="btn-primary">View Project</a>
-            </div>
-        </div>
+        <span class="category-label active" data-category="all">All</span>
+        <span class="category-label" data-category="web">Web</span>
        
-</div>
-
-        <!-- Additional Project Cards (for Web, Python, or other categories) can be added here -->
     </div>
 
-    <!-- Navigation Buttons -->
-    <div class="project-navigation">
-        <button id="prev-btn" class="btn-secondary">
-            <i class="fas fa-chevron-left"></i> <!-- Previous Arrow -->
-        </button>
-        <button id="next-btn" class="btn-secondary">
-            <i class="fas fa-chevron-right"></i> <!-- Next Arrow -->
-        </button>
+    <!-- Carousel Slider Container -->
+    <div class="carousel-container">
+        <div class="carousel">
+            <!-- Web Project Card 1 -->
+            <div class="project-card web" data-category="web">
+                <div class="project-video">
+                    <video controls>
+                        <source src="./assets/project_demo1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-info">
+                    <h3>Management System using PHP, MySQL, HTML, CSS, JavaScript</h3>
+                    <p>This project includes user authentication with login and signup, CRUD operations, and report generation functionalities.</p>
+                    <a href="https://github.com/onlyred17/Management-System" target="_blank" class="btn-primary">View Project</a>
+                </div>
+            </div>
+            <!-- Add more project cards below as needed -->
+
+        </div>
+        <div class="carousel-navigation">
+            <button class="carousel-btn prev">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <div class="carousel-indicators"></div>
+            <button class="carousel-btn next">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+        <div class="carousel-page-number">
+            <span class="page-circle current-page">1</span>
+        </div>
+        
     </div>
 </section>
+
+
 
 
        
@@ -276,92 +279,48 @@ function handleScroll() {
 
 window.addEventListener('scroll', handleScroll);
 document.addEventListener('DOMContentLoaded', handleScroll);
-
-// Category Navigation Logic
-const leftArrow = document.getElementById('left-arrow');
-const rightArrow = document.getElementById('right-arrow');
-const categoryLabels = document.querySelectorAll('.category-label');
+const categories = document.querySelectorAll('.category-label');
 const projectCards = document.querySelectorAll('.project-card');
-const prevBtn = document.getElementById('prev-btn');
-const nextBtn = document.getElementById('next-btn');
+const carousel = document.querySelector('.carousel');
+const prevBtn = document.querySelector('.carousel-btn.prev');
+const nextBtn = document.querySelector('.carousel-btn.next');
 
-// Define Projects by Category
-const allProjects = {
-    "web": document.querySelectorAll('.web-project'),
-    "csharp": document.querySelectorAll('.csharp-project'),
-    "python": document.querySelectorAll('.python-project')
-};
+let currentIndex = 0;
 
-let currentCategoryIndex = 0; // Track current category
-let currentProjectIndex = 0; // Track current project in category
+// Filter projects by category
+categories.forEach(category => {
+    category.addEventListener('click', () => {
+        const selectedCategory = category.getAttribute('data-category');
 
-// Update Active Category and Display Projects
-function updateActiveCategory(index) {
-    currentCategoryIndex = index;
-    currentProjectIndex = 0;
+        categories.forEach(cat => cat.classList.remove('active'));
+        category.classList.add('active');
 
-    // Update active class for categories
-    categoryLabels.forEach((label, i) => {
-        label.classList.toggle('active', i === index);
-    });
-
-    // Hide all projects and show only the selected category's projects
-    Object.keys(allProjects).forEach((category, i) => {
-        allProjects[category].forEach(project => {
-            project.style.display = (i === index) ? 'block' : 'none';
+        projectCards.forEach(card => {
+            if (selectedCategory === 'all' || card.classList.contains(selectedCategory)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
         });
     });
-
-    showProject(currentProjectIndex);
-}
-
-// Show Selected Project in the Current Category
-function showProject(index) {
-    const currentCategory = Object.keys(allProjects)[currentCategoryIndex];
-    const projects = allProjects[currentCategory];
-
-    projects.forEach((project, i) => {
-        project.style.display = i === index ? 'block' : 'none';
-    });
-}
-
-// Left Arrow Navigation for Categories
-leftArrow.addEventListener('click', () => {
-    currentCategoryIndex = (currentCategoryIndex > 0) ? currentCategoryIndex - 1 : categoryLabels.length - 1;
-    updateActiveCategory(currentCategoryIndex);
 });
 
-// Right Arrow Navigation for Categories
-rightArrow.addEventListener('click', () => {
-    currentCategoryIndex = (currentCategoryIndex < categoryLabels.length - 1) ? currentCategoryIndex + 1 : 0;
-    updateActiveCategory(currentCategoryIndex);
-});
+// Carousel navigation
+function updateCarousel() {
+    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
 
-// Project Navigation (Previous/Next Buttons)
 prevBtn.addEventListener('click', () => {
-    const currentCategory = Object.keys(allProjects)[currentCategoryIndex];
-    const projects = allProjects[currentCategory];
-
-    currentProjectIndex = (currentProjectIndex > 0) ? currentProjectIndex - 1 : projects.length - 1;
-    showProject(currentProjectIndex);
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+    }
 });
 
 nextBtn.addEventListener('click', () => {
-    const currentCategory = Object.keys(allProjects)[currentCategoryIndex];
-    const projects = allProjects[currentCategory];
-
-    currentProjectIndex = (currentProjectIndex < projects.length - 1) ? currentProjectIndex + 1 : 0;
-    showProject(currentProjectIndex);
-});
-
-// Initialize Default Category and Project on Page Load
-document.addEventListener('DOMContentLoaded', () => {
-    updateActiveCategory(currentCategoryIndex);
-    showProject(currentProjectIndex);
-
-    const firstSection = document.querySelector('section');
-    if (firstSection) {
-        firstSection.classList.add('visible');
+    if (currentIndex < projectCards.length - 1) {
+        currentIndex++;
+        updateCarousel();
     }
 });
 

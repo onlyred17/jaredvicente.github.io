@@ -683,32 +683,7 @@ contact {
     position: relative; /* For positioning buttons beside the cards */
 }
 
-.project-navigation {
-    position: absolute;
-    top: 50%;
-    left: 700px; /* Adjust this value to move left arrow closer */
-    right: 700px; /* Adjust this value to move right arrow closer */
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-}
 
-.project-navigation button {
-    background-color: transparent;
-    border: none;
-    font-size: 24px;
-    color: #fff; /* Adjust the color as needed */
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.project-navigation button:hover {
-    color: #ff6347; /* Change color on hover */
-}
-
-.project-navigation button i {
-    display: inline-block;
-}
 /* Add styles for the category section */
 .categories {
     display: flex;
@@ -726,20 +701,7 @@ contact {
     border-bottom: 2px solid transparent; /* Transparent by default */
 }
 
-.category-label.active {
-    color: #0056b3; /* Active label color */
-    border-bottom: 2px solid #007bff; /* Highlight active category with a blue bottom border */
-}
 
-.category-label:hover:not(:disabled) {
-    color: #0056b3; /* Hover color for active category */
-    border-bottom: 2px solid #0056b3; /* Hover underline */
-}
-
-.category-label:disabled {
-    color: #ddd;
-    cursor: not-allowed;
-}
 
 
 /* Header Styling */
@@ -827,16 +789,11 @@ nav {
     .project-cards-container {
         grid-template-columns: 1fr; /* Stack the project cards on smaller screens */
     }
-
-    /* Project Navigation */
-    .project-navigation {
-        position: static;
-        margin-top: 1rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 70px;
+    .carousel-container {
+        max-width: 100%; /* Full width on smaller screens */
+        padding: 0 15px; /* Optional: Add some padding to prevent content from touching the sides */
     }
+  
 
     /* Title Adjustments */
     h2 {
@@ -856,4 +813,144 @@ nav {
     .nav-links li a {
         font-size: 1.2rem;
     }
+}
+.categories {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.category-label {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    background-color: #2c3e50;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Add transitions for smooth effects */
+    color: white; /* Ensure text remains white on hover */
+
+}
+
+.category-label:hover {
+    background-color: #16a085; /* Change color to a lighter shade on hover */
+    transform: translateY(-5px) scale(1.1); /* Slightly move up and scale the label */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Add a soft shadow for depth */
+    color: white; /* Ensure text remains white on hover */
+}
+
+.category-label.active {
+    background-color: #16a085;
+    color: white;
+}
+
+.category-label.active:hover {
+    background-color: #16a085; /* Match hover color with category hover */
+}
+
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Ensure it takes full width of the parent container */
+    max-width: 1200px; /* Limit the maximum width to a suitable value */
+    margin: 0 auto; /* Center the carousel horizontally */
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
+.project-card {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+}
+.carousel-page-number {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    font-size: 16px;
+    color: #333;
+    height: 50px; /* Optional: adjust height for better alignment */
+}
+
+.carousel-page-number .page-circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Adjust width and height for circle size */
+    height: 40px;
+    border-radius: 50%;
+    background-color: #2c3e50;
+    color: #333;
+    font-size: 16px; /* Adjust font size */
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth effects */
+}
+
+.carousel-page-number .page-circle:hover {
+    background-color: #16a085; /* Change color to a lighter shade on hover */
+    transform: translateY(-5px) scale(1.1); /* Slightly move up and scale the circle */
+}
+
+.carousel-page-number .current-page {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.carousel-page-number .current-page:hover {
+    background-color: #16a085; /* Change color to the same hover color */
+    transform: translateY(-5px) scale(1.1); /* Same effect as the page circle */
+}
+
+.carousel-navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #2c3e50; /* Default color similar to submit button */
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 50%; /* Make the button round */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Add transitions for background, scale, and shadow */
+}
+
+.carousel-btn:hover {
+    background-color: #16a085; /* Change color to a lighter shade on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Add a soft shadow for depth */
+}
+
+.carousel-btn svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 2;
+    stroke: #fff; /* White arrow */
+}
+
+.carousel-btn.prev {
+    left: 10px; /* Position left arrow on the left side */
+}
+
+.carousel-btn.next {
+    right: 10px; /* Position right arrow on the right side */
+}
+
+.carousel-btn:focus {
+    outline: none; /* Remove focus outline */
 }
