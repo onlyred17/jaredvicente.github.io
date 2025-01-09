@@ -16,20 +16,23 @@
     <div class="background-animation"></div>
     <!-- Header Section -->
     <header>
-    <div class="logo-container">
-        <div class="logo">Jared Vicente</div>
-    </div>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-
+        <div class="logo-container">
+            <div class="logo">Jared Vicente</div>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <!-- Burger Menu Icon -->
+            <div class="burger" id="burger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
 
 <!-- Hero Section -->
 <section id="home" class="hero fade-in">
@@ -137,12 +140,7 @@
         </div>
         
     </div>
-</section>
-
-
-
-
-       
+</section>   
     </div>
 </section>
 
@@ -324,7 +322,13 @@ nextBtn.addEventListener('click', () => {
     }
 });
 
+// Burger Menu Toggle
+const burgerMenu = document.getElementById('burger-menu');
+const navLinks = document.querySelector('.nav-links');
 
+burgerMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
     </script>
 </body>
 </html>

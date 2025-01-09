@@ -804,14 +804,42 @@ nav {
         height: auto; /* Keep aspect ratio */
         border-radius: 50%; /* Optional: to make the image round */
     }
-    /* Header Styling */
     .nav-links {
-        flex-direction: row;
-        gap: 7px;
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: white;
+        padding: 1rem;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .nav-links li a{
+        color: black;
+    }
+    .nav-links.active {
+        display: flex;
     }
 
-    .nav-links li a {
-        font-size: 1.2rem;
+    .burger {
+        display: block;
+    }
+    /* Optional: Style for the burger icon */
+.burger i {
+    font-size: 1.5rem;
+    color: white;
+}
+}
+/* Desktop View (Larger Screens) */
+@media (min-width: 769px) {
+    .burger {
+        display: none; /* Hide the burger menu on larger screens */
+    }
+
+    .nav-links {
+        display: flex; /* Show the nav links normally on larger screens */
     }
 }
 .categories {
